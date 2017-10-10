@@ -8,17 +8,17 @@ const dotty = require('dotty');
 /**
 * @function
 * @param {Object} [config] The config object
-* @param {String} [prop="username"] The {@link User#state} property to use for string matching
-* @param {Boolean} [caseSensitive=false] Enable to consider ```config.prop``` character case when searching.
 * @example
-* chat = new ChatEngine.Chat('markdown-chat');
-* chat.plugin(onlineUserSearch({}));
-* let foundUsers = chat.search('red');
+* //providing a config is optional, the defaults are below
+* let config = { prop: 'uuid', caseSensitive: false }
+* chat.plugin(ChatEngineCore.plugin['chat-engine-online-user-search'](config));
+*
+* let results = chat.onlineUserSearch.search('foo');
 */
-module.exports = (config = {}) => {
+module.exports = (config) => {
 
     config = config || {};
-    config.prop = config.prop || 'username';
+    config.prop = config.prop || 'uuid';
     config.caseSensitive = config.caseSensitive || false;
 
     // these are new methods that will be added to the extended class
@@ -42,7 +42,7 @@ module.exports = (config = {}) => {
           // for every user that the parent chat knows about
           for(var key in this.parent.users) {
 
-              let haystack  = this.parent.users[key].state;
+              let haystack  = this.parent.users[key];
               let target = dotty.get(haystack, config.prop);
 
               // see if that user username includes the input text
@@ -72,7 +72,8 @@ module.exports = (config = {}) => {
     return {
       namespace: 'onlineUserSearch',
       extends: {
-          Chat: extension
+          Chat: extension,
+          GlobalChat: extension
       }
     }
 
