@@ -3,10 +3,10 @@
 
 // get some references to functions
 let send = function () {};
-let keypress = function () {};
+let submit = function () {};
 
 // create an optional config object, these are the defaults
-let config = { prop: 'uuid', caseSensitive: false };
+const config = { prop: 'uuid', caseSensitive: false };
 
 // connect some dummy users to the channel
 // typically you will not do this more than once in a client side app,
@@ -29,10 +29,7 @@ ChatEngine.on('$.ready', () => {
     // dummies.js creates a bunch of dummy users after this script runs
     // grab each as they come online to make a list of all users
     ChatEngine.global.on('$.online.*', (payload) => {
-        let div = document.createElement("li");
-        div.innerHTML = payload.user.uuid;
-        div.className += " list-group-item";
-        $('#all-user-list').append(div);
+        $('#all-user-list').append('<li class="list-group-item">' + payload.user.uuid + '</li>');
     });
 
     // * * * * *  begin plugin specific code  * * * * *
@@ -41,9 +38,9 @@ ChatEngine.on('$.ready', () => {
     ChatEngine.global.plugin(ChatEngineCore.plugin['chat-engine-online-user-search'](config));
 
     // create a helper function to search the online user list
-    getOnlineUsers = function (term) {
+    let getOnlineUsers = function (term) {
         return ChatEngine.global.onlineUserSearch.search(term);
-    }
+    };
 
     // * * * * *  end plugin specific code  * * * * *
 
@@ -56,10 +53,7 @@ ChatEngine.on('$.ready', () => {
         let results = getOnlineUsers($('#input').val());
 
         for (let result of results) {
-            let div = document.createElement("li");
-            div.innerHTML = result.uuid;
-            div.className += " list-group-item";
-            $('#online-user-list').append(div);
+            $('#online-user-list').append('<li class="list-group-item">' + result.uuid + '</li>');
         }
 
         $('#input').val('');

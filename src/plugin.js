@@ -72,8 +72,8 @@ module.exports = (config) => {
     return {
       namespace: 'onlineUserSearch',
       extends: {
-          Chat: extension,
-          GlobalChat: extension
+        Chat: extension,
+        GlobalChat: extension
       }
     }
 
