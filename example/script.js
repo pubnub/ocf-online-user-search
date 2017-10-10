@@ -40,6 +40,7 @@ ChatEngine.on('$.ready', () => {
     // attach the online-user-search plugin to the global channel
     ChatEngine.global.plugin(ChatEngineCore.plugin['chat-engine-online-user-search'](config));
 
+    // create a helper function to search the online user list
     getOnlineUsers = function (term) {
         return ChatEngine.global.onlineUserSearch.search(term);
     }
@@ -63,6 +64,14 @@ ChatEngine.on('$.ready', () => {
 
         $('#input').val('');
 
+    };
+
+    // hook up the enter key for maximum usability
+    submit = function (e) {
+
+        if (e.keyCode === 13) {
+            send();
+        }
     };
 
 });
