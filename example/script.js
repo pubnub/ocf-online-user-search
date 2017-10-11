@@ -8,10 +8,6 @@ let submit = function () {};
 // create an optional config object, these are the defaults
 const config = { prop: 'uuid', caseSensitive: false };
 
-// connect some dummy users to the channel
-// typically you will not do this more than once in a client side app,
-// but we need some users to be online
-
 // create another instance of chat-engine for our actual user
 const ChatEngine = ChatEngineCore.create({
     publishKey: 'pub-c-bcf4e625-d5e0-45de-9f74-f222bf63a4a1',
@@ -43,7 +39,6 @@ ChatEngine.on('$.ready', () => {
     };
 
     // * * * * *  end plugin specific code  * * * * *
-
 
     // use the input box value as search term and clear it when you hit send
     send = function () {
