@@ -17,6 +17,6 @@ users.forEach((user) => {
     });
 
     // connect our dummy clients to the channel
-    client.connect();
+    client.connect(user);
 
-})
+});
