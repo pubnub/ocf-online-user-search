@@ -6,8 +6,8 @@
     "start": "node node_modules/chat-engine/server.js & http-server -o && fg"
   },
   "dependencies": {
-    "chat-engine": "^0.6.0",
-    "chat-engine-online-user-search": "0.0.9",
+    "chat-engine": "^0.8.0",
+    "chat-engine-online-user-search": "0.0.10",
     "express": "^4.16.1",
     "http-server": "^0.10.0"
   }
