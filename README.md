@@ -9,10 +9,7 @@ Adds the ability to search for currently online users on a ChatEngine Chat
 const ChatEngine = ChatEngineCore.create({
     publishKey: 'pub-key-here',
     subscribeKey: 'sub-key-here'
-}, {
-    endpoint: 'http://chatengine:server/',
-    globalChannel: 'global-channel-name'
-});
+};
 
 ChatEngine.connect('Username');
 ChatEngine.on('$ready', () = { ... });
