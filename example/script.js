@@ -10,15 +10,12 @@ const config = { prop: 'uuid', caseSensitive: false };
 
 // create another instance of chat-engine for our actual user
 const ChatEngine = ChatEngineCore.create({
-    publishKey: 'pub-c-bcf4e625-d5e0-45de-9f74-f222bf63a4a1',
-    subscribeKey: 'sub-c-70f29a7c-8927-11e7-af73-96e8309537a2',
-}, {
-    endpoint: 'http://localhost:3000/insecure',
-    globalChannel: 'online-user-search-example'
+    publishKey: 'pub-c-c2a407d1-2771-4d22-9063-bd538c8d720f',
+    subscribeKey: 'sub-c-72ef270e-c41a-11e7-8c2e-7612aca27832'
 });
 
 // connect eddy to the network, and when it is successful, do some stuff
-ChatEngine.connect('Username');
+ChatEngine.connect('Ed');
 
 ChatEngine.on('$.ready', () => {
 

@@ -35,7 +35,7 @@ module.exports = (config) => {
           // an empty array of users we found
           var returnList = [];
 
-          if(config.caseSensitive) {
+          if(!config.caseSensitive) {
               needle = needle.toLowerCase();
           }
 

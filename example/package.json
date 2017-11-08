@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "raimondi1337",
   "scripts": {
-    "start": "node node_modules/chat-engine/server.js & http-server -o && fg"
+    "start": "http-server -o"
   },
   "dependencies": {
     "chat-engine": "^0.8.0",
