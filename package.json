@@ -4,7 +4,7 @@
   "version": "0.0.10",
   "main": "src/plugin.js",
   "dependencies": {
-    "chat-engine": "^0.8.0",
+    "chat-engine": "^0.8.3",
     "dotty": "0.0.2"
   }
 }
