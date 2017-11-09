@@ -9,8 +9,8 @@ users.forEach((user) => {
 
     // create some dummy clients
     let client = ChatEngineCore.create({
-        publishKey: 'pub-c-c2a407d1-2771-4d22-9063-bd538c8d720f',
-        subscribeKey: 'sub-c-72ef270e-c41a-11e7-8c2e-7612aca27832'
+        publishKey: YOUR_PUBLISH_KEY,
+        subscribeKey: YOUR_SUBSCRIBE_KEY
     });
 
     // connect our dummy clients to the channel
