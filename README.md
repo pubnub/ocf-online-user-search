@@ -1,4 +1,4 @@
-# Online User Search Plugin for Chat Engine
+# Online User Search Plugin for ChatEngine
 
 Adds the ability to search for currently online users on a ChatEngine Chat
 
