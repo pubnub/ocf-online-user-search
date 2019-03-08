@@ -1,5 +1,5 @@
 /**
-* @overview This plugin simplifies and automates the process of searching for currently online users. <br> <img src="plugins/chat-engine-online-user-search/output.gif" height="400"></img> <br>
+* @overview This plugin simplifies and automates the process of searching for currently online users. <br> <img src="plugins/chat-engine-online-user-search/output.gif" height="400"></img>
 * Searches a {@link Chat} for a {@link User} with a ```state.username``` containing a given string.
 * @module chat-engine-online-user-search
 */
